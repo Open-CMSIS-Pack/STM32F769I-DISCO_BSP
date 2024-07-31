@@ -1,6 +1,6 @@
 /******************************************************************************
  * File Name   : MX_Device.h
- * Date        : 16/07/2024 13:31:13
+ * Date        : 31/07/2024 14:26:39
  * Description : STM32Cube MX parameter definitions
  * Note        : This file is generated with a generator out of the
  *               STM32CubeMX project and its generated files (DO NOT EDIT!)
@@ -157,7 +157,7 @@
 #define MX_SDMMC2                               1
 
 /* Mode */
-#define MX_SDMMC2_MODE_MMC                      1
+#define MX_SDMMC2_MODE_SD                       1
 
 /* Pins */
 
@@ -187,33 +187,6 @@
 #define MX_SDMMC2_D0_GPIO_PuPd                  GPIO_NOPULL
 #define MX_SDMMC2_D0_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
 #define MX_SDMMC2_D0_GPIO_AF                    GPIO_AF11_SDMMC2
-
-/* SDMMC2_D1 */
-#define MX_SDMMC2_D1_Pin                        PG10
-#define MX_SDMMC2_D1_GPIO_Pin                   GPIO_PIN_10
-#define MX_SDMMC2_D1_GPIOx                      GPIOG
-#define MX_SDMMC2_D1_GPIO_Mode                  GPIO_MODE_AF_PP
-#define MX_SDMMC2_D1_GPIO_PuPd                  GPIO_NOPULL
-#define MX_SDMMC2_D1_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
-#define MX_SDMMC2_D1_GPIO_AF                    GPIO_AF11_SDMMC2
-
-/* SDMMC2_D2 */
-#define MX_SDMMC2_D2_Pin                        PB3
-#define MX_SDMMC2_D2_GPIO_Pin                   GPIO_PIN_3
-#define MX_SDMMC2_D2_GPIOx                      GPIOB
-#define MX_SDMMC2_D2_GPIO_Mode                  GPIO_MODE_AF_PP
-#define MX_SDMMC2_D2_GPIO_PuPd                  GPIO_NOPULL
-#define MX_SDMMC2_D2_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
-#define MX_SDMMC2_D2_GPIO_AF                    GPIO_AF10_SDMMC2
-
-/* SDMMC2_D3 */
-#define MX_SDMMC2_D3_Pin                        PB4
-#define MX_SDMMC2_D3_GPIO_Pin                   GPIO_PIN_4
-#define MX_SDMMC2_D3_GPIOx                      GPIOB
-#define MX_SDMMC2_D3_GPIO_Mode                  GPIO_MODE_AF_PP
-#define MX_SDMMC2_D3_GPIO_PuPd                  GPIO_NOPULL
-#define MX_SDMMC2_D3_GPIO_Speed                 GPIO_SPEED_FREQ_VERY_HIGH
-#define MX_SDMMC2_D3_GPIO_AF                    GPIO_AF10_SDMMC2
 
 /*------------------------------ SPI2           -----------------------------*/
 #define MX_SPI2                                 1

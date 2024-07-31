@@ -76,10 +76,6 @@ extern int app_main   (void);
 #define ARDUINO_SCL_D15_GPIO_Port GPIOB
 #define ULPI_D7_Pin GPIO_PIN_5
 #define ULPI_D7_GPIO_Port GPIOB
-#define uSD_D3_Pin GPIO_PIN_4
-#define uSD_D3_GPIO_Port GPIOB
-#define uSD_D2_Pin GPIO_PIN_3
-#define uSD_D2_GPIO_Port GPIOB
 #define uSD_CMD_Pin GPIO_PIN_7
 #define uSD_CMD_GPIO_Port GPIOD
 #define WIFI_RX_Pin GPIO_PIN_12
@@ -132,8 +128,6 @@ extern int app_main   (void);
 #define NC1_GPIO_Port GPIOK
 #define SPDIF_RX_Pin GPIO_PIN_12
 #define SPDIF_RX_GPIO_Port GPIOG
-#define uSD_D1_Pin GPIO_PIN_10
-#define uSD_D1_GPIO_Port GPIOG
 #define WIFI_RST_Pin GPIO_PIN_14
 #define WIFI_RST_GPIO_Port GPIOJ
 #define RMII_RXER_Pin GPIO_PIN_5
