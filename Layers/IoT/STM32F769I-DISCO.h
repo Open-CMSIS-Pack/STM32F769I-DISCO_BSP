@@ -29,8 +29,6 @@
 #include "Driver_USBD.h"
 
 // STM32F769I-DISCO (Rev.B-02) Arduino Connector Pin Defintions
-#define ARDUINO_UNO_D0  GPIO_PIN_ID_PORTC(7U)  // USART6: RX
-#define ARDUINO_UNO_D1  GPIO_PIN_ID_PORTC(6U)  // USART6: TX
 #define ARDUINO_UNO_D2  GPIO_PIN_ID_PORTJ(1U)
 #define ARDUINO_UNO_D3  GPIO_PIN_ID_PORTF(6U)
 #define ARDUINO_UNO_D4  GPIO_PIN_ID_PORTJ(0U)
@@ -49,18 +47,21 @@
 #define ARDUINO_UNO_D17 GPIO_PIN_ID_PORTF(10U)
 #define ARDUINO_UNO_D18 GPIO_PIN_ID_PORTF(8U)
 #define ARDUINO_UNO_D19 GPIO_PIN_ID_PORTF(9U)
-#define ARDUINO_UNO_D20 GPIO_PIN_ID_PORTB(9U)  // I2C1: SDA
-#define ARDUINO_UNO_D21 GPIO_PIN_ID_PORTB(8U)  // I2C1: SCL
 
+// STM32F746G-DISCO (Rev.B-02) Arduino Connector Alternate Function Pin Definitions
+// D0  - USART6: RX   (PC7)
+// D1  - USART6: TX   (PC6))
+// D20 - I2C1:   SDA  (PB9)
+// D21 - I2C1:   SCL  (PB8)
 // CMSIS Driver instances on Arduino connector
 #define ARDUINO_UNO_I2C     1
 #define ARDUINO_UNO_UART    6
 
 // CMSIS Driver instances of Board peripherals
-#define CMSIS_DRIVER_ETH    0 // CMSIS-Driver ETH instance number
-#define CMSIS_DRIVER_MCI    2 // CMSIS-Driver MCI instance number
-#define CMSIS_DRIVER_USART  5 // CMSIS-Driver USART instance number
-#define CMSIS_DRIVER_USBD   1 // CMSIS-Driver USB Device instance number
+#define CMSIS_DRIVER_ETH    0   // CMSIS-Driver ETH instance number
+#define CMSIS_DRIVER_MCI    2   // CMSIS-Driver MCI instance number
+#define CMSIS_DRIVER_USART  5   // CMSIS-Driver USART instance number
+#define CMSIS_DRIVER_USBD   1   // CMSIS-Driver USB Device instance number
 
 // Retarget stdio to CMSIS UART
 #define RETARGET_STDIO_UART 1

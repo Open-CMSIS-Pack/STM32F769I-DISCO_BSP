@@ -323,7 +323,7 @@ void HAL_DSI_MspInit(DSI_HandleTypeDef* hdsi)
     HAL_GPIO_Init(DSIHOST_TE_GPIO_Port, &GPIO_InitStruct);
 
     /* DSI interrupt Init */
-    HAL_NVIC_SetPriority(DSI_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(DSI_IRQn, 8, 0);
     HAL_NVIC_EnableIRQ(DSI_IRQn);
   /* USER CODE BEGIN DSI_MspInit 1 */
 
@@ -508,7 +508,7 @@ void HAL_CEC_MspInit(CEC_HandleTypeDef* hcec)
     HAL_GPIO_Init(CEC_GPIO_Port, &GPIO_InitStruct);
 
     /* CEC interrupt Init */
-    HAL_NVIC_SetPriority(CEC_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(CEC_IRQn, 8, 0);
     HAL_NVIC_EnableIRQ(CEC_IRQn);
   /* USER CODE BEGIN CEC_MspInit 1 */
 
@@ -710,7 +710,7 @@ void HAL_LTDC_MspInit(LTDC_HandleTypeDef* hltdc)
     /* Peripheral clock enable */
     __HAL_RCC_LTDC_CLK_ENABLE();
     /* LTDC interrupt Init */
-    HAL_NVIC_SetPriority(LTDC_IRQn, 0, 0);
+    HAL_NVIC_SetPriority(LTDC_IRQn, 8, 0);
     HAL_NVIC_EnableIRQ(LTDC_IRQn);
   /* USER CODE BEGIN LTDC_MspInit 1 */
 
@@ -931,15 +931,15 @@ void HAL_RTC_MspDeInit(RTC_HandleTypeDef* hrtc)
 }
 
 /**
-* @brief MMC MSP Initialization
+* @brief SD MSP Initialization
 * This function configures the hardware resources used in this example
-* @param hmmc: MMC handle pointer
+* @param hsd: SD handle pointer
 * @retval None
 */
-void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
+void HAL_SD_MspInit(SD_HandleTypeDef* hsd)
 {
   GPIO_InitTypeDef GPIO_InitStruct = {0};
-  if(hmmc->Instance==SDMMC2)
+  if(hsd->Instance==SDMMC2)
   {
   /* USER CODE BEGIN SDMMC2_MspInit 0 */
 
@@ -988,7 +988,7 @@ void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
       Error_Handler();
     }
 
-    __HAL_LINKDMA(hmmc,hdmarx,hdma_sdmmc2_rx);
+    __HAL_LINKDMA(hsd,hdmarx,hdma_sdmmc2_rx);
 
     /* SDMMC2_TX Init */
     hdma_sdmmc2_tx.Instance = DMA2_Stream5;
@@ -1009,7 +1009,7 @@ void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
       Error_Handler();
     }
 
-    __HAL_LINKDMA(hmmc,hdmatx,hdma_sdmmc2_tx);
+    __HAL_LINKDMA(hsd,hdmatx,hdma_sdmmc2_tx);
 
     /* SDMMC2 interrupt Init */
     HAL_NVIC_SetPriority(SDMMC2_IRQn, 8, 0);
@@ -1023,14 +1023,14 @@ void HAL_MMC_MspInit(MMC_HandleTypeDef* hmmc)
 }
 
 /**
-* @brief MMC MSP De-Initialization
+* @brief SD MSP De-Initialization
 * This function freeze the hardware resources used in this example
-* @param hmmc: MMC handle pointer
+* @param hsd: SD handle pointer
 * @retval None
 */
-void HAL_MMC_MspDeInit(MMC_HandleTypeDef* hmmc)
+void HAL_SD_MspDeInit(SD_HandleTypeDef* hsd)
 {
-  if(hmmc->Instance==SDMMC2)
+  if(hsd->Instance==SDMMC2)
   {
   /* USER CODE BEGIN SDMMC2_MspDeInit 0 */
 
@@ -1048,8 +1048,8 @@ void HAL_MMC_MspDeInit(MMC_HandleTypeDef* hmmc)
     HAL_GPIO_DeInit(uSD_D0_GPIO_Port, uSD_D0_Pin);
 
     /* SDMMC2 DMA DeInit */
-    HAL_DMA_DeInit(hmmc->hdmarx);
-    HAL_DMA_DeInit(hmmc->hdmatx);
+    HAL_DMA_DeInit(hsd->hdmarx);
+    HAL_DMA_DeInit(hsd->hdmatx);
 
     /* SDMMC2 interrupt DeInit */
     HAL_NVIC_DisableIRQ(SDMMC2_IRQn);

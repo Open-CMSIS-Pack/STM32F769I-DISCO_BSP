@@ -38,7 +38,6 @@ Refer to ["Configure STM32 Devices with CubeMX"](https://github.com/Open-CMSIS-P
 | vioBUTTON0        | Button USER (PA0)
 | vioLED0           | LD1 RED     (PJ13)
 | vioLED1           | LD2 GREEN   (PJ5)
-| vioLED2           | LD3 GREEN   (PA12)
 
 ## Arduino UNO mapping
 

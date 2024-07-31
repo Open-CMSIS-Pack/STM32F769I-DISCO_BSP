@@ -86,7 +86,7 @@ SAI_HandleTypeDef hsai_BlockA1;
 SAI_HandleTypeDef hsai_BlockB1;
 SAI_HandleTypeDef hsai_BlockA2;
 
-MMC_HandleTypeDef hmmc2;
+SD_HandleTypeDef hsd2;
 DMA_HandleTypeDef hdma_sdmmc2_rx;
 DMA_HandleTypeDef hdma_sdmmc2_tx;
 
@@ -130,7 +130,7 @@ static void MX_QUADSPI_Init(void);
 static void MX_RTC_Init(void);
 static void MX_SAI1_Init(void);
 static void MX_SAI2_Init(void);
-static void MX_SDMMC2_MMC_Init(void);
+static void MX_SDMMC2_SD_Init(void);
 static void MX_SPDIFRX_Init(void);
 static void MX_TIM1_Init(void);
 static void MX_TIM3_Init(void);
@@ -178,6 +178,7 @@ int main(void)
   PeriphCommonClock_Config();
 
   /* USER CODE BEGIN SysInit */
+  SystemCoreClockUpdate();
 
   /* USER CODE END SysInit */
 
@@ -1089,7 +1090,7 @@ static void MX_SAI2_Init(void)
   * @param None
   * @retval None
   */
-static void MX_SDMMC2_MMC_Init(void)
+static void MX_SDMMC2_SD_Init(void)
 {
 
   /* USER CODE BEGIN SDMMC2_Init 0 */
@@ -1099,14 +1100,14 @@ static void MX_SDMMC2_MMC_Init(void)
   /* USER CODE BEGIN SDMMC2_Init 1 */
 
   /* USER CODE END SDMMC2_Init 1 */
-  hmmc2.Instance = SDMMC2;
-  hmmc2.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
-  hmmc2.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
-  hmmc2.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
-  hmmc2.Init.BusWide = SDMMC_BUS_WIDE_1B;
-  hmmc2.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
-  hmmc2.Init.ClockDiv = 0;
-  if (HAL_MMC_Init(&hmmc2) != HAL_OK)
+  hsd2.Instance = SDMMC2;
+  hsd2.Init.ClockEdge = SDMMC_CLOCK_EDGE_RISING;
+  hsd2.Init.ClockBypass = SDMMC_CLOCK_BYPASS_DISABLE;
+  hsd2.Init.ClockPowerSave = SDMMC_CLOCK_POWER_SAVE_DISABLE;
+  hsd2.Init.BusWide = SDMMC_BUS_WIDE_1B;
+  hsd2.Init.HardwareFlowControl = SDMMC_HARDWARE_FLOW_CONTROL_DISABLE;
+  hsd2.Init.ClockDiv = 0;
+  if (HAL_SD_Init(&hsd2) != HAL_OK)
   {
     Error_Handler();
   }
@@ -1504,8 +1505,8 @@ static void MX_USB_OTG_HS_PCD_Init(void)
   /* USER CODE END USB_OTG_HS_Init 1 */
   hpcd_USB_OTG_HS.Instance = USB_OTG_HS;
   hpcd_USB_OTG_HS.Init.dev_endpoints = 9;
-  hpcd_USB_OTG_HS.Init.speed = PCD_SPEED_HIGH;
-  hpcd_USB_OTG_HS.Init.dma_enable = DISABLE;
+  hpcd_USB_OTG_HS.Init.speed = PCD_SPEED_FULL;
+  hpcd_USB_OTG_HS.Init.dma_enable = ENABLE;
   hpcd_USB_OTG_HS.Init.phy_itface = USB_OTG_ULPI_PHY;
   hpcd_USB_OTG_HS.Init.Sof_enable = DISABLE;
   hpcd_USB_OTG_HS.Init.low_power_enable = DISABLE;
