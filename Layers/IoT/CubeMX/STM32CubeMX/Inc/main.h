@@ -115,6 +115,8 @@ extern int shield_setup (void);
 #define DFSDM_DATIN5_GPIO_Port GPIOC
 #define QSPI_D1_Pin GPIO_PIN_10
 #define QSPI_D1_GPIO_Port GPIOC
+#define ARDUINO_D13_SPI2_SCK_Pin GPIO_PIN_12
+#define ARDUINO_D13_SPI2_SCK_GPIO_Port GPIOA
 #define NC4_Pin GPIO_PIN_8
 #define NC4_GPIO_Port GPIOI
 #define FMC_NBL2_Pin GPIO_PIN_4
@@ -355,6 +357,10 @@ extern int shield_setup (void);
 #define FMC_D10_GPIO_Port GPIOE
 #define ULPI_D4_Pin GPIO_PIN_11
 #define ULPI_D4_GPIO_Port GPIOB
+#define ARDUINO_D12_SPI2_MISO_Pin GPIO_PIN_14
+#define ARDUINO_D12_SPI2_MISO_GPIO_Port GPIOB
+#define ARDUINO_D11_SPI2_MOSI_Pin GPIO_PIN_15
+#define ARDUINO_D11_SPI2_MOSI_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
