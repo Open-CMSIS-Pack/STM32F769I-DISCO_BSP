@@ -85,7 +85,6 @@
       <book category="schematic" name="https://www.st.com/resource/en/schematic_pack/mb1225-f769i-b02_schematic.pdf" title="Schematics"/>
       <book category="other"     name="Documents/README.md" title="Guide"/>
       <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32F769NIHx"/>
-      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F769"/>
       <feature type="ODbg"      n="1"                name="On-board ST-LINK/V2"/>
       <feature type="XTAL"      n="25000000"/>
       <feature type="RAM"       n="1"                name="128-Mbit SDRAM (64 Mbits accessible)"/>
